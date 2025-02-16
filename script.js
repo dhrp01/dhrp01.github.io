@@ -5,7 +5,7 @@ function toggleMenu(){
     icon.classList.toggle("open")
 }
 
-const roles=['Software Developer', 'Machine Learning Engineer', 'Linux Enthusiast']
+const roles=['Software Developer', 'GenAI Developer', 'AI Engineer', 'Machine Learning Engineer', 'Linux Enthusiast']
 let currentIndex = 0;
 const role_text = document.getElementById('role')
 let currentRoleIndex = 0;
@@ -53,3 +53,34 @@ function changeRole() {
 }
 
 setInterval(changeRole, 60)
+
+function toggleTheme() {
+    const body = document.body;
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    
+    // Update theme icon
+    const themeIcons = document.querySelectorAll('.theme-icon');
+    themeIcons.forEach(icon => {
+        icon.src = newTheme === 'dark' ? './assets/sun.png' : './assets/moon.png';
+        icon.alt = newTheme === 'dark' ? 'Light mode' : 'Dark mode';
+    });
+    
+    // Save preference to localStorage
+    localStorage.setItem('theme', newTheme);
+}
+
+// Load saved theme preference
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    
+    // Set initial theme icon
+    const themeIcons = document.querySelectorAll('.theme-icon');
+    themeIcons.forEach(icon => {
+        icon.src = savedTheme === 'dark' ? './assets/sun.png' : './assets/moon.png';
+        icon.alt = savedTheme === 'dark' ? 'Light mode' : 'Dark mode';
+    });
+});
