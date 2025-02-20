@@ -84,3 +84,69 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.alt = savedTheme === 'dark' ? 'Light mode' : 'Dark mode';
     });
 });
+
+let currentPage = 0;  // Start at first page
+const projectsTrack = document.getElementById('projectsTrack');
+const projects = projectsTrack.children;
+const dotsContainer = document.getElementById('projectDots');
+const projectsPerPage = 3;
+const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+// Initialize the track position
+projectsTrack.style.transform = 'translateX(0)';  // Start at the beginning
+
+// Create dots
+for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToPage(i);
+    dotsContainer.appendChild(dot);
+}
+
+function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentPage);
+    });
+}
+
+function moveProjects(direction) {
+    const projectsTrack = document.getElementById('projectsTrack');
+    const projects = projectsTrack.children;
+    const projectsContainer = document.querySelector('.projects-container');
+
+    const projectWidth = projects[0].offsetWidth + 20; // Adding margin/gap
+    const projectsPerPage = 3;
+    const totalPages = Math.ceil(projects.length / projectsPerPage);
+    
+    // Update current page
+    currentPage = Math.min(Math.max(0, currentPage + direction), totalPages - 1);
+    
+    // Move projects track by projectWidth * 3 (since we are showing 3 at a time)
+    projectsTrack.style.transform = `translateX(-${currentPage * projectWidth * projectsPerPage}px)`;
+    
+    updateDots();
+}
+
+function goToPage(pageNumber) {
+    currentPage = pageNumber;
+    projectsTrack.style.transform = `translateX(-${currentPage * 100}%)`;
+    updateDots();
+}
+
+// Optional: Add touch swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+projectsTrack.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+projectsTrack.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) {
+        moveProjects(1); // Swipe left
+    } else if (touchEndX - touchStartX > 50) {
+        moveProjects(-1); // Swipe right
+    }
+});

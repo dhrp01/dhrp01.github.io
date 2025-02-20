@@ -266,18 +266,21 @@ section{
 }
 
 .about-containers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    width: 100%;
+    margin: 2rem auto;
+    max-width: 900px;
+    justify-content: center;
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
 
 .about-details-container {
+    display: flex;
     justify-content: center;
     flex-direction: column;
-}
-
-.about-containers, .about-details-container{
-    display: flex;
 }
 
 .about-pic {
@@ -288,16 +291,6 @@ section{
     position: absolute;
     right: -5rem;
     bottom: 2.5rem;
-}
-
-.details-container {
-    padding: 1.5rem;
-    flex: 1;
-    background: var(--bg-color);
-    border-radius: 2rem;
-    border: 0.1rem solid var(--border-color);
-    border-color: rgb(163,163,163);
-    text-align: center;
 }
 
 .section-container {
@@ -339,15 +332,42 @@ section{
     justify-content: space-around;
 }
 
-article {
+.article-container article {
     display: flex;
     width: 10rem;
     justify-content: space-around;
     gap: 0.5rem;
 }
 
+/* Match box styling with skills and projects */
+.details-container {
+    padding: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 2rem;
+    border: 0.1rem solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+/* .details-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--hover-color);
+} */
+
 article .icon {
     cursor: default;
+}
+
+article h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+article p {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
 }
 
 /* Project Sections */
@@ -357,24 +377,40 @@ article .icon {
 }
 
 .color-container {
-    border-color: var(--border-color);
+    border-color: var(--primary-color);
     background: var(--bg-color);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .project-img {
-    border-radius: 2rem;
-    width: 90%;
-    height: 90%;
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
 }
 
 .project-title {
-    margin: 1rem;
+    margin: 1rem 0;
     color: var(--text-color);
 }
 
 .project-btn {
     color: var(--text-color);
-    border-color: var(--border-color);
+    border-color: var(--primary-color);
+}
+
+.project-btn:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.project-description {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    text-align: center;
 }
 
 /* Contanct */
@@ -485,7 +521,541 @@ body {
     border: 0.1rem solid var(--border-color);
 }
 
-/* Add this if you want to adjust icon colors in dark mode */
+.university-seal {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
 [data-theme="dark"] .icon {
     filter: invert(1);
+}
+
+[data-theme="dark"] .university-seal {
+    filter: none;
+}
+
+.university-seal{
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.coursework-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.coursework-list li {
+    position: relative;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.coursework-list li:last-child {
+    border-bottom: none;
+}
+
+.coursework-list li::before {
+    position: absolute;
+    left: 1rem;
+    color: var(--primary-color);
+}
+
+.text-container h4 {
+    margin-top: 1rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+
+/* For mobile screens */
+@media (max-width: 600px) {
+    .coursework-list {
+        columns: 1;
+    }
+}
+
+/* Timeline Container */
+.timeline-container {
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) - now with gradient */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+/* Container around content */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* The circles on the timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: var(--bg-color);
+    border: 0.1rem solid var(--border-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::after {
+    border-color: var(--hover-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 25px;
+    border: medium solid var(--primary-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--primary-color);
+}
+
+/* Add arrows to the right container */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 25px;
+    border: medium solid var(--primary-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--primary-color) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -12px;
+}
+
+/* The actual content */
+.content {
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    position: relative;
+    border-radius: 2rem;
+    border: 0.1rem solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--hover-color);
+}
+
+.content .date {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.content h2 {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.content h3 {
+    margin: 0.5rem 0;
+    color: var(--text-color-light);
+}
+
+.content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.content ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    /* Place the timeline to the left */
+    .timeline::after {
+        left: 31px;
+    }
+    
+    /* Full width containers */
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    /* Make all containers stack on top */
+    .right {
+        left: 0;
+    }
+    
+    /* Make all circles align to left */
+    .timeline-item::after {
+        left: 18px;
+    }
+    
+    /* Make all arrows align to left */
+    .left::before,
+    .right::before {
+        left: 55px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--primary-color) transparent transparent;
+    }
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skill-details-container {
+    padding: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 2rem;
+    border: 0.1rem solid var(--border-color);
+    width: 100%;
+}
+
+.skill-details-container h2.experience-sub-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-gray);
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.skill-article-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skill-article {
+    display: flex;
+    align-items: center;
+    /* gap: 0.5rem; */
+    padding: 0.5rem;
+    /* min-width: 250px; */
+    /* flex: 1; */
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+.project-front {
+    padding: 1.5rem;  /* Move padding to front content */
+    background: var(--bg-color);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+}
+
+.project-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    backface-visibility: hidden;
+}
+
+.project-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-details li {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.project-details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.project-card:hover .project-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover .project-front {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+/* Update existing styles */
+.color-container {
+    border-color: var(--primary-color);
+    background: var(--bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-img {
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-title {
+    margin: 1rem 0;
+    color: var(--text-color);
+}
+
+.project-description {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.btn-container {
+    margin-top: 1rem;
+}
+
+.project-btn {
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+.project-btn:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.projects-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#projectsTrack {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 2rem;
+}
+
+.details-container.color-container {
+    flex: 0 0 calc((100% - 5%) / 3);
+    min-width: calc((100% - 5%) / 3);
+    max-width: calc((100% - 5%) / 3);
+    box-sizing: border-box;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.carousel-btn {
+    background: var(--bg-color);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.prev {
+    left: -3rem;
+}
+
+.next {
+    right: -3rem;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-color-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 1400px) {
+    .carousel-btn {
+        position: relative;
+        transform: none;
+        top: auto;
+    }
+    
+    .prev, .next {
+        left: auto;
+        right: auto;
+    }
+    
+    .carousel-container {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-btn {
+        display: none;
+    }
+    
+    .carousel-container {
+        padding: 0 1rem;
+    }
+    
+    .projects-container {
+        padding: 0;
+    }
+}
+
+/* Unified box styling for skills, experience, and projects */
+.details-container,
+.skill-details-container,
+.details-container.color-container {
+    padding: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 2rem;  /* Match skills section */
+    border: 0.1rem solid var(--border-color);  /* Match skills section */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for all sections */
+.details-container:hover,
+.skill-details-container:hover,
+.details-container.color-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--hover-color);
+    position: relative;
+    top: 2px;
+}
+
+.details-container.color-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 2rem 2rem 0 0;
+    pointer-events: none;
+    z-index: 20;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    transform: translateY(0); /* No offset on normal state */
+}
+
+.details-container.color-container:hover::before {
+    transform: translateY(2px);
+    border-top-color: var(--hover-color);
+}
+
+@media screen and (max-width: 1200px) {
+    .about-containers {
+        grid-template-columns: 1fr;
+        max-width: 600px;  /* Adjusted for single column */
+    }
 }
