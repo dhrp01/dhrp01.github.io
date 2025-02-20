@@ -13,10 +13,10 @@
         <div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button id="theme-toggle" onclick="toggleTheme()">
                     <img src="./assets/moon.png" alt="Dark mode" class="theme-icon">
@@ -39,10 +39,10 @@
         </div>
         <div class="menu-links">
             <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#education" onclick="toggleMenu()">Education</a></li>
             <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
             <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+            <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
             <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
         </div>
@@ -108,6 +108,182 @@
             <img src="./assets/arrow.png" alt="arrow icon" class="icon arrow" onclick="location.href='./#experience'">            
         </div>
     </section>
+    <section id="experience">
+        <p class="section__text__p1">Where I Worked</p>
+        <h1 class="title">Experience</h1>
+        <div class="timeline-container">
+            <div class="timeline">
+                <!-- Right side -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <div class="date">2023 - Present</div>
+                        <h2>Software Developer</h2>
+                        <h3>Company Name</h3>
+                        <ul>
+                            <li>Developed and maintained software applications using Java, C++, and SQL</li>
+                            <li>Collaborated with cross-functional teams to analyze, design, and implement new features</li>
+                            <li>Optimized database queries and implemented caching solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Left side -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <div class="date">2021 - 2023</div>
+                        <h2>Software Engineer</h2>
+                        <h3>Previous Company</h3>
+                        <ul>
+                            <li>Led development of key features resulting in 30% performance improvement</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
+                            <li>Implemented automated testing procedures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Add more timeline items as needed -->
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#skills'">
+    </section>
+    <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="carousel-container">
+            <button class="carousel-btn prev" onclick="moveProjects(-1)">❮</button>
+            <div class="experience-details-container">
+                <div class="projects-container">
+                    <div class="projects-track" id="projectsTrack">
+                        <!-- Project 1 -->
+                        <div class="details-container color-container">
+                            <div class="project-card">
+                                <div class="project-front">
+                                    <div class="article-container">
+                                        <img src="./assets/project1.png" alt="Project 1" class="project-img"/>
+                                    </div>
+                                    <h2 class="experience-sub-title project-title">Screen Share</h2>
+                                    <p class="project-description">Real-time screen sharing application using WebRTC and Socket.io</p>
+                                </div>
+                                <div class="project-details">
+                                    <ul>
+                                        <li>Implemented WebRTC for peer-to-peer connections</li>
+                                        <li>Built real-time communication using Socket.io</li>
+                                        <li>Optimized video quality and performance</li>
+                                        <li>Added secure room-based sharing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="details-container color-container">
+                            <div class="project-card">
+                                <div class="project-front">
+                                    <div class="article-container">
+                                        <img src="./assets/project2.png" alt="Project 2" class="project-img"/>
+                                    </div>
+                                    <h2 class="experience-sub-title project-title">AI Chat Assistant</h2>
+                                    <p class="project-description">Intelligent chatbot powered by GPT-3 with context awareness and memory</p>
+                                </div>
+                                <div class="project-details">
+                                    <ul>
+                                        <li>Utilized GPT-3 for intelligent responses</li>
+                                        <li>Implemented context awareness using NLP</li>
+                                        <li>Developed a memory system for conversational history</li>
+                                        <li>Integrated with external APIs for data retrieval</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
+                            </div>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="details-container color-container">
+                            <div class="project-card">
+                                <div class="project-front">
+                                    <div class="article-container">
+                                        <img src="./assets/project3.png" alt="Project 3" class="project-img"/>
+                                    </div>
+                                    <h2 class="experience-sub-title project-title">Text-to-Speech Engine</h2>
+                                    <p class="project-description">Custom TTS system with multiple voice options and language support</p>
+                                </div>
+                                <div class="project-details">
+                                    <ul>
+                                        <li>Developed a multi-voice TTS system</li>
+                                        <li>Implemented language support for various languages</li>
+                                        <li>Optimized audio quality and naturalness</li>
+                                        <li>Integrated with external APIs for text-to-speech</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
+                            </div>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="details-container color-container">
+                            <div class="project-card">
+                                <div class="project-front">
+                                    <div class="article-container">
+                                        <img src="./assets/project4.png" alt="Project 4" class="project-img"/>
+                                    </div>
+                                    <h2 class="experience-sub-title project-title">Smart Home Dashboard</h2>
+                                    <p class="project-description">IoT dashboard for monitoring and controlling smart home devices</p>
+                                </div>
+                                <div class="project-details">
+                                    <ul>
+                                        <li>Built with React and Material-UI for responsive design</li>
+                                        <li>Integrated MQTT protocol for real-time device updates</li>
+                                        <li>Implemented device automation scheduling</li>
+                                        <li>Added energy consumption analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
+                            </div>
+                        </div>
+                        <!-- Project 5 -->
+                        <div class="details-container color-container">
+                            <div class="project-card">
+                                <div class="project-front">
+                                    <div class="article-container">
+                                        <img src="./assets/project5.png" alt="Project 5" class="project-img"/>
+                                    </div>
+                                    <h2 class="experience-sub-title project-title">AI Image Generator</h2>
+                                    <p class="project-description">Deep learning-based image generation tool using GANs</p>
+                                </div>
+                                <div class="project-details">
+                                    <ul>
+                                        <li>Implemented StyleGAN2 architecture for high-quality images</li>
+                                        <li>Created custom training pipeline for specific domains</li>
+                                        <li>Built web interface for easy image generation</li>
+                                        <li>Added style mixing and attribute manipulation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next" onclick="moveProjects(1)">❯</button>
+        </div>
+        <div class="carousel-dots" id="projectDots">
+            <!-- Dots will be added by JavaScript -->
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
+    </section>
     <section id="education">
         <p class="section__text__p1">Where I Learned</p>
         <h1 class="title">Education</h1>
@@ -152,44 +328,6 @@
             </div>
         </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
-    </section>
-    <section id="experience">
-        <p class="section__text__p1">Where I Worked</p>
-        <h1 class="title">Experience</h1>
-        <div class="timeline-container">
-            <div class="timeline">
-                <!-- Right side -->
-                <div class="timeline-item right">
-                    <div class="content">
-                        <div class="date">2023 - Present</div>
-                        <h2>Software Developer</h2>
-                        <h3>Company Name</h3>
-                        <ul>
-                            <li>Developed and maintained software applications using Java, C++, and SQL</li>
-                            <li>Collaborated with cross-functional teams to analyze, design, and implement new features</li>
-                            <li>Optimized database queries and implemented caching solutions</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Left side -->
-                <div class="timeline-item left">
-                    <div class="content">
-                        <div class="date">2021 - 2023</div>
-                        <h2>Software Engineer</h2>
-                        <h3>Previous Company</h3>
-                        <ul>
-                            <li>Led development of key features resulting in 30% performance improvement</li>
-                            <li>Mentored junior developers and conducted code reviews</li>
-                            <li>Implemented automated testing procedures</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Add more timeline items as needed -->
-            </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#skills'">
     </section>
     <section id="skills">
         <p class="section__text__p1">Explore My</p>
@@ -570,144 +708,6 @@
         </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'">
     </section>
-    <section id="projects">
-        <p class="section__text__p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="carousel-container">
-            <button class="carousel-btn prev" onclick="moveProjects(-1)">❮</button>
-            <div class="experience-details-container">
-                <div class="projects-container">
-                    <div class="projects-track" id="projectsTrack">
-                        <!-- Project 1 -->
-                        <div class="details-container color-container">
-                            <div class="project-card">
-                                <div class="project-front">
-                                    <div class="article-container">
-                                        <img src="./assets/project1.png" alt="Project 1" class="project-img"/>
-                                    </div>
-                                    <h2 class="experience-sub-title project-title">Screen Share</h2>
-                                    <p class="project-description">Real-time screen sharing application using WebRTC and Socket.io</p>
-                                </div>
-                                <div class="project-details">
-                                    <ul>
-                                        <li>Implemented WebRTC for peer-to-peer connections</li>
-                                        <li>Built real-time communication using Socket.io</li>
-                                        <li>Optimized video quality and performance</li>
-                                        <li>Added secure room-based sharing</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="details-container color-container">
-                            <div class="project-card">
-                                <div class="project-front">
-                                    <div class="article-container">
-                                        <img src="./assets/project2.png" alt="Project 2" class="project-img"/>
-                                    </div>
-                                    <h2 class="experience-sub-title project-title">AI Chat Assistant</h2>
-                                    <p class="project-description">Intelligent chatbot powered by GPT-3 with context awareness and memory</p>
-                                </div>
-                                <div class="project-details">
-                                    <ul>
-                                        <li>Utilized GPT-3 for intelligent responses</li>
-                                        <li>Implemented context awareness using NLP</li>
-                                        <li>Developed a memory system for conversational history</li>
-                                        <li>Integrated with external APIs for data retrieval</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
-                            </div>
-                        </div>
-                        <!-- Project 3 -->
-                        <div class="details-container color-container">
-                            <div class="project-card">
-                                <div class="project-front">
-                                    <div class="article-container">
-                                        <img src="./assets/project3.png" alt="Project 3" class="project-img"/>
-                                    </div>
-                                    <h2 class="experience-sub-title project-title">Text-to-Speech Engine</h2>
-                                    <p class="project-description">Custom TTS system with multiple voice options and language support</p>
-                                </div>
-                                <div class="project-details">
-                                    <ul>
-                                        <li>Developed a multi-voice TTS system</li>
-                                        <li>Implemented language support for various languages</li>
-                                        <li>Optimized audio quality and naturalness</li>
-                                        <li>Integrated with external APIs for text-to-speech</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
-                            </div>
-                        </div>
-                        <!-- Project 4 -->
-                        <div class="details-container color-container">
-                            <div class="project-card">
-                                <div class="project-front">
-                                    <div class="article-container">
-                                        <img src="./assets/project4.png" alt="Project 4" class="project-img"/>
-                                    </div>
-                                    <h2 class="experience-sub-title project-title">Smart Home Dashboard</h2>
-                                    <p class="project-description">IoT dashboard for monitoring and controlling smart home devices</p>
-                                </div>
-                                <div class="project-details">
-                                    <ul>
-                                        <li>Built with React and Material-UI for responsive design</li>
-                                        <li>Integrated MQTT protocol for real-time device updates</li>
-                                        <li>Implemented device automation scheduling</li>
-                                        <li>Added energy consumption analytics</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
-                            </div>
-                        </div>
-                        <!-- Project 5 -->
-                        <div class="details-container color-container">
-                            <div class="project-card">
-                                <div class="project-front">
-                                    <div class="article-container">
-                                        <img src="./assets/project5.png" alt="Project 5" class="project-img"/>
-                                    </div>
-                                    <h2 class="experience-sub-title project-title">AI Image Generator</h2>
-                                    <p class="project-description">Deep learning-based image generation tool using GANs</p>
-                                </div>
-                                <div class="project-details">
-                                    <ul>
-                                        <li>Implemented StyleGAN2 architecture for high-quality images</li>
-                                        <li>Created custom training pipeline for specific domains</li>
-                                        <li>Built web interface for easy image generation</li>
-                                        <li>Added style mixing and attribute manipulation</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">GitHub</button>
-                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://demo-link.com'">Live Demo</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-btn next" onclick="moveProjects(1)">❯</button>
-        </div>
-        <div class="carousel-dots" id="projectDots">
-            <!-- Dots will be added by JavaScript -->
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
-    </section>
     <section id="contact">
         <p class="section__text__p1">Want to know more?</p>
         <h1 class="title">Contact Me</h1>
@@ -727,10 +727,10 @@
             <div class="nav-links-container">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>

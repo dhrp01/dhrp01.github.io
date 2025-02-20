@@ -833,6 +833,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .project-details li {
@@ -842,6 +843,8 @@ body {
     padding-left: 1.5rem;
     font-size: 0.9rem;
     line-height: 1.4;
+    padding-left: 1.5rem;
+    text-align: left;
 }
 
 .project-details li::before {
