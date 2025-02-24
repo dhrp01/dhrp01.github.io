@@ -36,7 +36,20 @@ nav, .nav-links {
 nav {
     justify-content: space-around;
     align-items: center;
-    height: 17vh;
+    height: 8vh;
+}
+
+#desktop-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#footer-nav {
+    height: 8vh;
 }
 
 .nav-links {
@@ -337,6 +350,12 @@ section{
     width: 10rem;
     justify-content: space-around;
     gap: 0.5rem;
+}
+
+
+/* Education Section */
+#education {
+    position: relative;
 }
 
 /* Match box styling with skills and projects */
@@ -1061,4 +1080,20 @@ body {
         grid-template-columns: 1fr;
         max-width: 600px;  /* Adjusted for single column */
     }
+}
+
+.text-container {
+    padding: 1rem;
+}
+
+.about-text {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
 }
