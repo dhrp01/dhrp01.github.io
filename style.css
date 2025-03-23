@@ -247,16 +247,16 @@ section{
     border: rgb(53,53,53) 0.1rem solid;
 }
 
-.btn-color-1:hower, .btn-color-2:hower {
+.btn-color-1:hover, .btn-color-2:hover {
     cursor: pointer;
 }
 
-.btn-color-1, .btn-color-2:hower {
+.btn-color-1, .btn-color-2:hover {
     background: rgb(53,53,53);
     color: white;
 }
 
-.btn-color-1:hower {
+.btn-color-1:hover {
     background: rgb(0,0,0);
 }
 
@@ -264,7 +264,7 @@ section{
     background: none;
 }
 
-.btn-color-2:hower {
+.btn-color-2:hover {
     border: rgb(255,255,255) 0.1rem solid;
 }
 
@@ -457,7 +457,7 @@ article p {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin: 1rem;   
+    margin: 1rem;
 }
 
 .contact-info-container p {
@@ -745,24 +745,24 @@ body {
     .timeline::after {
         left: 31px;
     }
-    
+
     /* Full width containers */
     .timeline-item {
         width: 100%;
         padding-left: 70px;
         padding-right: 25px;
     }
-    
+
     /* Make all containers stack on top */
     .right {
         left: 0;
     }
-    
+
     /* Make all circles align to left */
     .timeline-item::after {
         left: 18px;
     }
-    
+
     /* Make all arrows align to left */
     .left::before,
     .right::before {
@@ -1009,12 +1009,12 @@ body {
         transform: none;
         top: auto;
     }
-    
+
     .prev, .next {
         left: auto;
         right: auto;
     }
-    
+
     .carousel-container {
         padding: 0 1rem;
     }
@@ -1024,11 +1024,11 @@ body {
     .carousel-btn {
         display: none;
     }
-    
+
     .carousel-container {
         padding: 0 1rem;
     }
-    
+
     .projects-container {
         padding: 0;
     }
