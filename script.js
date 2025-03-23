@@ -15,7 +15,7 @@ function changeRole() {
     // DIRECT CHANGE
     // document.getElementById('role').innerText = roles[currentIndex];
     // currentIndex = (currentIndex + 1) % roles.length
-    
+
     // PHASE IN AND PHASE OUT
     // const role_text = document.getElementById('role');
     // role_text.style.opacity = 0;
@@ -31,7 +31,7 @@ function changeRole() {
     const shortenedRole = role.substring(0, currentRoleIndex);
     role_text.innerText = shortenedRole;
     role_text.style.height = `${role_text.scrollHeight}px`
-    
+
     if (typingDirection === 1){
         currentRoleIndex++;
         if (currentRoleIndex > role.length) {
@@ -58,16 +58,16 @@ function toggleTheme() {
     const body = document.body;
     const currentTheme = body.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
+
     body.setAttribute('data-theme', newTheme);
-    
+
     // Update theme icon
     const themeIcons = document.querySelectorAll('.theme-icon');
     themeIcons.forEach(icon => {
         icon.src = newTheme === 'dark' ? './assets/sun.png' : './assets/moon.png';
         icon.alt = newTheme === 'dark' ? 'Light mode' : 'Dark mode';
     });
-    
+
     // Save preference to localStorage
     localStorage.setItem('theme', newTheme);
 }
@@ -76,7 +76,7 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.setAttribute('data-theme', savedTheme);
-    
+
     // Set initial theme icon
     const themeIcons = document.querySelectorAll('.theme-icon');
     themeIcons.forEach(icon => {
@@ -118,13 +118,13 @@ function moveProjects(direction) {
     const projectWidth = projects[0].offsetWidth + 20; // Adding margin/gap
     const projectsPerPage = 3;
     const totalPages = Math.ceil(projects.length / projectsPerPage);
-    
+
     // Update current page
     currentPage = Math.min(Math.max(0, currentPage + direction), totalPages - 1);
-    
+
     // Move projects track by projectWidth * 3 (since we are showing 3 at a time)
     projectsTrack.style.transform = `translateX(-${currentPage * projectWidth * projectsPerPage}px)`;
-    
+
     updateDots();
 }
 
