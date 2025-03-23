@@ -5,7 +5,7 @@ function toggleMenu(){
     icon.classList.toggle("open")
 }
 
-const roles=['Software Developer', 'GenAI Developer', 'AI Engineer', 'Machine Learning Engineer', 'Linux Enthusiast']
+const roles=['Software Developer', 'Full Stack Engineer', 'GenAI Developer', 'AI Engineer', 'Machine Learning Engineer', 'Linux Enthusiast']
 let currentIndex = 0;
 const role_text = document.getElementById('role')
 let currentRoleIndex = 0;
@@ -52,7 +52,7 @@ function changeRole() {
     }
 }
 
-setInterval(changeRole, 60)
+setInterval(changeRole, 80)
 
 function toggleTheme() {
     const body = document.body;
