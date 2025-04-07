@@ -542,8 +542,8 @@ body {
 }
 
 .university-seal {
-    width: 180px;
-    height: 180px;
+    width: 300px;
+    height: 300px;
     object-fit: contain;
     margin-bottom: 1rem;
 }
