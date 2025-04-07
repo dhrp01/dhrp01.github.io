@@ -39,12 +39,14 @@
             <span></span>
         </div>
         <div class="menu-links">
+            <ul>
             <li><a href="#about" onclick="toggleMenu()">About</a></li>
             <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
             <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
             <li><a href="#education" onclick="toggleMenu()">Education</a></li>
             <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
             <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
         </div>
         </div>
     </nav>
@@ -162,12 +164,8 @@
     <section id="projects">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
-        <div class="carousel-container">
-            <button class="carousel-btn prev" onclick="moveProjects(-1)">❮</button>
             <div class="experience-details-container">
                 <div class="projects-container">
-                    <div class="projects-track" id="projectsTrack">
-                        <!-- Project 1 -->
                         <div class="details-container color-container">
                             <div class="project-card">
                                 <div class="project-front">
@@ -289,14 +287,8 @@
                                 <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/dhrp01/Screeen-share?tab=readme-ov-file#demo-videos'">Live Demo</button>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
-            <button class="carousel-btn next" onclick="moveProjects(1)">❯</button>
-        </div>
-        <div class="carousel-dots" id="projectDots">
-            <!-- Dots will be added by JavaScript -->
-        </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#education'"/>
     </section>
     <section id="education">
@@ -756,7 +748,7 @@
         </div>
     </section>
     <footer id="footer-nav">
-        <nav>
+        <!-- <nav>
             <div class="nav-links-container">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
@@ -767,7 +759,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav> -->
         <p>The end. Or is it just a beginning?</p>
         <p>Copyright &#169; 2025 Dhrumeen Patel. All Rights Reserved</p>
     </footer>
